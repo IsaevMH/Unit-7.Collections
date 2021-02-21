@@ -24,7 +24,7 @@ public class MainApp {
 
         taxiPark.showParkPrice();
 
-        taxiPark.showCarsInParticularRangeOfSpeed(299,400);
+        taxiPark.showCarsInRangeOfSpeed(299,400);
 
 
     }

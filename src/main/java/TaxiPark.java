@@ -31,7 +31,7 @@ public class TaxiPark {
             }
         });
     }
-    public void showCarsInParticularRangeOfSpeed(int minimalValueOfSpeed, int maximumValueOfSpeed){
+    public void showCarsInRangeOfSpeed(int minimalValueOfSpeed, int maximumValueOfSpeed){
         System.out.println(cars.stream().filter(car -> car.getMaxSpeed() <= maximumValueOfSpeed
                 && car.getMaxSpeed() >= minimalValueOfSpeed).collect(Collectors.toList()).toString());
     }
