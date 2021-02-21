@@ -1,26 +1,24 @@
 package Collections.entities;
 
 import Collections.interfaces.BodyType;
+import Collections.interfaces.FuelType;
 
-public abstract class Car {
+public class Car extends Transport{
     private String brandName;
     private String modelName;
     private long price;
     private double fuelUsageOnHudredKilometers;
-    private int maxSpeed;
     private String colour;
     private BodyType bodyType;
-    private double weightInTons;
 
-    public Car(String brandName, String modelName, long price, double fuelUsageOnHudredKilometers, int maxSpeed, String colour, BodyType bodyType, double weightInTons) {
+    public Car(String brandName, String modelName, long price, double fuelUsageOnHudredKilometers, String colour, BodyType bodyType, int countPassenger, double weightInKilograms, int maxSpeed, FuelType fuelType) {
+        super(countPassenger, weightInKilograms, maxSpeed, fuelType);
         this.brandName = brandName;
         this.modelName = modelName;
         this.price = price;
         this.fuelUsageOnHudredKilometers = fuelUsageOnHudredKilometers;
-        this.maxSpeed = maxSpeed;
         this.colour = colour;
         this.bodyType = bodyType;
-        this.weightInTons = weightInTons;
     }
 
     public String getBrandName() {
@@ -31,9 +29,6 @@ public abstract class Car {
         return modelName;
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
 
     public String getColour() {
         return colour;
@@ -41,10 +36,6 @@ public abstract class Car {
 
     public BodyType getBodyType() {
         return bodyType;
-    }
-
-    public double getWeightInTons() {
-        return weightInTons;
     }
 
     public long getPrice() {
@@ -62,10 +53,20 @@ public abstract class Car {
                 ", modelName='" + modelName + '\'' +
                 ", price=" + price +
                 ", fuelUsageOnHudredKilometers=" + fuelUsageOnHudredKilometers +
-                ", maxSpeed=" + maxSpeed +
+                ", maxSpeed=" + getMaxSpeed() +
                 ", colour='" + colour + '\'' +
                 ", bodyType=" + bodyType +
-                ", weightInTons=" + weightInTons +
+                ", weightInTons=" + getWeightInKilograms() +
                 '}';
+    }
+
+    @Override
+    public void move(int distance) {
+
+    }
+
+    @Override
+    public void stop() {
+
     }
 }

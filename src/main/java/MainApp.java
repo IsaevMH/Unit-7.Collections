@@ -1,19 +1,16 @@
 import Collections.entities.Car;
-import Collections.entities.DieselEngineCar;
-import Collections.entities.PetrolEngineCar;
+import Collections.entities.Passenger;
 import Collections.interfaces.BodyType;
-import Collections.interfaces.DieselType;
-import Collections.interfaces.GasolineType;
+import Collections.interfaces.FuelType;
 
 import java.util.*;
 import java.util.List;
 
 public class MainApp {
    static List<Car> cars = Arrays.asList(
-           new DieselEngineCar("Kia", "Carnival", 3_599_000, 9.0, 300, "Red", BodyType.WAGON, 7, DieselType.DIESEL, 3.5),
-            new PetrolEngineCar("Huyndai", "Solaris", 1_099_000, 6.6, 220, "Red", BodyType.SEDAN, 5, GasolineType.AI_92, 1.2),
-            new PetrolEngineCar("Huyndai", "Elantra", 1_599_000, 6.0, 250, "Red", BodyType.SEDAN, 5, GasolineType.AI_95, 1.5)
-
+           new Passenger("Kia", "Carnival", 3_599_000, 9.0, "Red",  BodyType.WAGON, 7, 1100, 300, FuelType.DIESEL),
+           new Passenger("Huyndai", "Solaris", 1_099_000, 6.6, "Blue",  BodyType.SEDAN, 5, 1100, 300, FuelType.PETROL),
+           new Passenger("Huyndai", "Elantra", 1_599_000, 6.0, "Green",  BodyType.SEDAN, 5, 1100, 300, FuelType.PETROL)
     );
 
     public static void main(String[] args) {
