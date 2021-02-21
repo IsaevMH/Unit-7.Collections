@@ -20,16 +20,11 @@ public class MainApp {
         TaxiPark taxiPark = new TaxiPark(cars);
 
         taxiPark.sortByMaxFuelUsages();
-        for (Car car : cars) {
-            System.out.println(car.getBrandName() + " " + car.getModelName() + " " + car.getFuelUsageOnHudredKilometers());
-        }
+        cars.forEach(System.out::println);
 
-        System.out.println(taxiPark.getParkPrice());
+        taxiPark.showParkPrice();
 
-        for (Car car :  taxiPark.findCarsInParticularRangeOfSpeed(299, 400)) {
-            System.out.println(car.getBrandName() + " " + car.getModelName() + " " + car.getFuelUsageOnHudredKilometers() + " " + car.getMaxSpeed());
-
-        }
+        taxiPark.showCarsInParticularRangeOfSpeed(299,400);
 
 
     }

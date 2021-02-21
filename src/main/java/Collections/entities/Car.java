@@ -55,4 +55,17 @@ public abstract class Car {
         return fuelUsageOnHudredKilometers;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brandName='" + brandName + '\'' +
+                ", modelName='" + modelName + '\'' +
+                ", price=" + price +
+                ", fuelUsageOnHudredKilometers=" + fuelUsageOnHudredKilometers +
+                ", maxSpeed=" + maxSpeed +
+                ", colour='" + colour + '\'' +
+                ", bodyType=" + bodyType +
+                ", weightInTons=" + weightInTons +
+                '}';
+    }
 }

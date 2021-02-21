@@ -14,11 +14,9 @@ public class TaxiPark {
         this.cars = cars;
     }
 
-    public long getParkPrice() {
-        for (Car car : cars) {
-            parkPrice += car.getPrice();
-        }
-        return parkPrice;
+    public void showParkPrice() {
+        cars.forEach(car -> parkPrice += car.getPrice());
+        System.out.println(parkPrice);
     }
 
     public void sortByMaxFuelUsages() {
@@ -33,8 +31,8 @@ public class TaxiPark {
             }
         });
     }
-    public List<Car> findCarsInParticularRangeOfSpeed(int minimalValueOfSpeed, int maximumValueOfSpeed){
-        return cars.stream().filter(car -> car.getMaxSpeed() <= maximumValueOfSpeed
-                && car.getMaxSpeed() >= minimalValueOfSpeed).collect(Collectors.toList());
+    public void showCarsInParticularRangeOfSpeed(int minimalValueOfSpeed, int maximumValueOfSpeed){
+        System.out.println(cars.stream().filter(car -> car.getMaxSpeed() <= maximumValueOfSpeed
+                && car.getMaxSpeed() >= minimalValueOfSpeed).collect(Collectors.toList()).toString());
     }
 }
